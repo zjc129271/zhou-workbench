@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A3530"/>
+      <stop offset="100%" stop-color="#1F1D1A"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <g transform="translate(4,-4) scale(1.70667)">
+    <ellipse cx="160" cy="245" rx="60" ry="15" fill="#000000" fill-opacity="0.5"/>
+    <path d="M 145 120 C 110 120, 85 150, 85 185 C 85 225, 105 250, 160 250 C 195 250, 220 230, 220 200 C 220 180, 200 155, 190 140 C 185 130, 165 120, 145 120 Z" fill="#8c8273" stroke="#2a241f" stroke-width="3"/>
+    <path d="M 205 210 C 240 215, 250 175, 235 150 C 225 130, 210 135, 215 155 C 220 170, 220 190, 205 210" fill="#7a7163" stroke="#2a241f" stroke-width="3"/>
+    <path d="M 130 85 C 100 85, 85 110, 85 130 C 85 155, 110 165, 145 165 C 180 165, 195 150, 195 125 C 195 100, 160 85, 130 85 Z" fill="#8c8273" stroke="#2a241f" stroke-width="3"/>
+    <path d="M 95 90 L 115 60 L 130 85 Z" fill="#8c8273" stroke="#2a241f" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M 100 88 L 115 68 L 124 85 Z" fill="#b8aa98"/>
+    <path d="M 150 80 L 165 55 L 185 85 Z" fill="#7a7163" stroke="#2a241f" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M 155 80 L 165 63 L 178 83 Z" fill="#b8aa98"/>
+    <ellipse cx="115" cy="120" rx="8" ry="9" fill="#ffffff" stroke="#2a241f" stroke-width="2"/>
+    <ellipse cx="117" cy="120" rx="4" ry="5" fill="#1a1815"/>
+    <ellipse cx="118.5" cy="118.5" rx="1.5" ry="1.5" fill="#ffffff"/>
+    <ellipse cx="150" cy="120" rx="5" ry="9" fill="#ffffff" stroke="#2a241f" stroke-width="2"/>
+    <ellipse cx="151" cy="120" rx="2.5" ry="5" fill="#1a1815"/>
+    <ellipse cx="152" cy="118.5" rx="1" ry="1" fill="#ffffff"/>
+    <path d="M 145 140 L 155 140 L 150 145 Z" fill="#4a3c35" stroke="#2a241f" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 150 145 Q 145 152, 138 150" fill="none" stroke="#2a241f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 150 145 Q 155 152, 160 148" fill="none" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="90" y1="130" x2="50" y2="125" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="90" y1="135" x2="45" y2="135" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="90" y1="140" x2="55" y2="145" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="170" y1="125" x2="195" y2="115" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="170" y1="130" x2="200" y2="125" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="170" y1="135" x2="195" y2="140" stroke="#2a241f" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 115 95 Q 130 88, 150 95" fill="none" stroke="#b8aa98" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 115 160 Q 95 190, 100 220" fill="none" stroke="#b8aa98" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 110 230 Q 150 250, 205 225" fill="none" stroke="#2a241f" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+    <path d="M 135 180 Q 150 165, 165 185 Q 155 200, 135 180 Z" fill="#6d6558" opacity="0.6"/>
+    <path d="M 115 200 Q 125 190, 135 205 Q 125 215, 115 200 Z" fill="#6d6558" opacity="0.6"/>
+  </g>
+</svg>

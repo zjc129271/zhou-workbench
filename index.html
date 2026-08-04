@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#B1D685" />
+  <meta name="description" content="个人生活工作台：记账、备忘、任务、日常记录，可装到手机桌面长期使用。" />
+  <!-- 独立 App 安装相关：让「添加到主屏幕」后以全屏 App 形态运行，而非网页 -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="舟" />
+  <meta name="application-name" content="舟" />
+  <title>舟</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="app-header__title">hello，舟！</div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换明暗主题">
+        <svg class="tt-ico tt-ico--circle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.2" y1="5.2" x2="7" y2="7"/><line x1="17" y1="17" x2="18.8" y2="18.8"/><line x1="18.8" y1="5.2" x2="17" y2="7"/><line x1="7" y1="17" x2="5.2" y2="18.8"/></g></svg>
+        <svg class="tt-ico tt-ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z" fill="currentColor"/></svg>
+      </button>
+    </header>
+    <div id="installBanner" class="install-banner" style="display:none">
+      <div class="install-banner__txt">📲 安装到手机桌面，像 App 一样使用</div>
+      <button class="btn btn--sm install-banner__btn" id="installBtn">安装</button>
+      <button class="install-banner__close" id="installClose" aria-label="关闭">✕</button>
+    </div>
+    <main id="view" class="view"></main>
+    <nav class="bottom-nav" id="bottomNav"></nav>
+  </div>
+  <script src="vendor/chart.umd.js"></script>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script>
+    // 启动兜底：模块加载/运行出错时，避免只显示标题
+    (function () {
+      function showBootError(msg) {
+        var v = document.getElementById('view');
+        if (!v) return;
+        if (v.childElementCount > 0 && document.getElementById('bottomNav') && document.getElementById('bottomNav').childElementCount > 0) return;
+        v.innerHTML = '<div class="card"><div class="empty">页面加载异常。' + (msg ? '<br><span style="font-size:12px">' + msg + '</span>' : '') + '<br><button class="btn" style="margin-top:14px" onclick="location.reload()">刷新重试</button></div></div>';
+      }
+      window.addEventListener('error', function (e) {
+        if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+          showBootError('资源加载失败：' + (e.target.src || e.target.href));
+        }
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        showBootError(e && e.reason && e.reason.message ? e.reason.message : '脚本运行错误');
+      });
+      // 兜底：若 6 秒后仍未渲染（多为旧 SW 返回陈旧脚本），自动刷新一次以拿到最新页面
+      setTimeout(function () {
+        var v = document.getElementById('view');
+        if (v && v.childElementCount === 0 && document.getElementById('bottomNav') && document.getElementById('bottomNav').childElementCount === 0) {
+          if (!sessionStorage.getItem('boot_retried')) {
+            sessionStorage.setItem('boot_retried', '1');
+            location.reload(true);
+          } else {
+            showBootError('页面渲染失败，请清除站点数据后重新打开');
+          }
+        }
+      }, 6000);
+    })();
+  </script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
