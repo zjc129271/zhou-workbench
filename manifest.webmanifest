@@ -1,0 +1,41 @@
+{
+  "id": "life-workbench",
+  "name": "生活工作台",
+  "short_name": "工作台",
+  "description": "个人生活工作台：记账、备忘、任务、日常记录",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "orientation": "portrait",
+  "categories": ["productivity", "finance", "lifestyle"],
+  "background_color": "#f2f7f3",
+  "theme_color": "#12915a",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "记账", "url": "./index.html#bill" },
+    { "name": "每日任务", "url": "./index.html#daily" },
+    { "name": "日常记录", "url": "./index.html#journal" }
+  ]
+}
